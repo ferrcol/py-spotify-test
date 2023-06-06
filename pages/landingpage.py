@@ -14,3 +14,6 @@ class landingPage:
 
     def title(self):
         return self.browser.title
+    
+    def goToLoging(self):
+        self.browser.find_element(By.CSS_SELECTOR, 'button[data-testid="login-button"]').click()

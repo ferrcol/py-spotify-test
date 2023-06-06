@@ -11,3 +11,6 @@ class logingPage:
 
     def load(self):
         self.browser.get(self.URL)
+
+    def title(self):
+        return self.browser.title
