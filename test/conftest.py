@@ -6,6 +6,7 @@ import pytest
 import selenium.webdriver
 from pages.landingPage import landingPage
 from pages.loginPage import loginPage
+from pages.resetPage import resetPage
 
 
 @pytest.fixture(scope="class")
@@ -30,6 +31,10 @@ def landing_page(browser):
 @pytest.fixture(scope="class")
 def login_page(browser):
     return loginPage(browser)
+
+@pytest.fixture(scope="class")
+def reset_page(browser):
+    return resetPage(browser)
 
 @pytest.fixture
 def clean(browser):
