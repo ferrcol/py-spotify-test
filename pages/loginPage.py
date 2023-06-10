@@ -11,6 +11,7 @@ class loginPage:
     PASS_FIELD = (By.ID, 'login-password')
     LOGIN_BUTTON = (By.ID, 'login-button')
     BANNER = (By.CSS_SELECTOR, '[data-encore-id="banner"]')
+    RESET_BUTTON = (By.CSS_SELECTOR,'[data-testid="reset-password-link"]')
 
     def __init__(self, browser):
         self.browser = browser
@@ -28,6 +29,11 @@ class loginPage:
         wait.until(EC.visibility_of_element_located(self.PASS_FIELD))
         self.browser.find_element(*self.PASS_FIELD).send_keys(py_pass)
         self.browser.find_element(*self.LOGIN_BUTTON).click()
+
+    def goToResetPassPage(self):
+        wait = WebDriverWait(self.browser, 10)
+        wait.until(EC.visibility_of_element_located(self.RESET_BUTTON))
+        self.browser.find_element(*self.RESET_BUTTON).click()
 
     def getMge(self):
         wait = WebDriverWait(self.browser, 10)
