@@ -15,6 +15,8 @@ def browser():
   # Initialize the ChromeDriver instance
   b = selenium.webdriver.Chrome()
 
+  b.set_window_size(1920, 1080)
+
   # Make its calls wait up to 10 seconds for elements to appear
   b.implicitly_wait(10)
 
